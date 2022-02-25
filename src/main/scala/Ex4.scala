@@ -8,7 +8,7 @@ object Ex4 {
 
     val output = data.filter(col("_c2") === "Soccer")
 
-    output.write.format("text")
+    output.write.format("csv").option("sep"," ")
       .mode("overwrite")
       .save("src/main/resources/dataset/solution4")
     output
