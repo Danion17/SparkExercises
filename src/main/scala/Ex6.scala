@@ -18,6 +18,7 @@ object Ex6 {
       output.write.format("csv")
         .option("sep","\t")
         .option("compression","bzip2")
+        .mode("overwrite")
         .save("src/main/resources/dataset/solution6")
 
       output

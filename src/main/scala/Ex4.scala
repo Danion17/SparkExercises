@@ -7,6 +7,7 @@ object Ex4 {
       .csv("src/main/resources/retail_db/categories")
 
     val output = data.filter(col("_c2") === "Soccer")
+      .select(col("_c0").as("id"),col("_c1").as("department_id"),col("_c2").as("name"))
 
     output.write.format("csv").option("sep"," ")
       .mode("overwrite")
