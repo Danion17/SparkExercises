@@ -9,7 +9,7 @@ object Ex4 {
     val output = data.filter(col("_c2") === "Soccer")
       .select(col("_c0").as("id"),col("_c1").as("department_id"),col("_c2").as("name"))
 
-    output.write.format("csv").option("sep"," ")
+    output.write.format("csv").option("sep","|")
       .mode("overwrite")
       .save("src/main/resources/dataset/solution4")
     output

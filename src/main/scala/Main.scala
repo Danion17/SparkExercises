@@ -12,6 +12,7 @@ object Main extends App{
   sparkSession.sparkContext.setLogLevel("ERROR")
   import sparkSession.implicits._
 
+/*
   println("Exercise 1:")
   val results1 = Ex1.exercise1()
   results1.show()
@@ -37,6 +38,13 @@ object Main extends App{
   results6.show()
 
 
+
+ */
+
+  println("Join Exercise:")
+  val joinResult = JoinEx.joinExercise()
+  joinResult.show()
+  print(joinResult.schema)
 }
 
 

@@ -15,7 +15,7 @@ object Ex2 {
 
 
 
-    output.write.format("csv").mode("overwrite")
+    output.coalesce(1).write.format("csv").mode("overwrite")
       .option("header",true).option("sep",":")
       .save("src/main/resources/dataset/solution2")
 

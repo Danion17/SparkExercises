@@ -9,9 +9,9 @@ object Ex3 {
       .load("src/main/resources/retail_db/customers-tab-delimited")
 
     val output = data.filter(col("_c1").startsWith("A"))
-      .groupBy(col("_c7")).agg(count("*").as("n_customer"))
-      .filter(col("n_customer") >= 50)
-      .select(col("_c7").as("state"),col("n_customer"))
+      .groupBy(col("_c7")).count()   //.agg(count("*").as("n_customer"))  // agg por .count("id)
+      .filter(col("count") >= 50)
+      .select(col("_c7").as("state"),col("count").as("customer_count"))
 
 
     output.write.format("parquet").option("compression","gzip")
